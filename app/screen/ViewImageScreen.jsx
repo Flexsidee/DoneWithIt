@@ -1,5 +1,6 @@
 import React from "react";
 import { Platform, StatusBar, StyleSheet, View, Image } from "react-native";
+
 import colors from "../config/colors";
 
 const ViewImageScreen = (props) => {
@@ -18,7 +19,7 @@ const ViewImageScreen = (props) => {
 			<Image
 				source={require("../assets/images/chair.jpg")}
 				style={styles.image}
-				resizeMethod="contain"
+				resizeMethod="resize"
 			/>
 		</View>
 	);
