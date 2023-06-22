@@ -22,12 +22,20 @@ const styles = StyleSheet.create({
 		borderRadius: 15,
 		overflow: "hidden",
 	},
-	image: { width: "100%", height: 200 },
+	image: {
+		width: "100%",
+		height: 200,
+	},
 	cardDetailsContainer: {
 		padding: 20,
 	},
-	title: { marginBottom: 7 },
-	subTitle: { color: colors.secondary },
+	title: {
+		marginBottom: 7,
+		fontWeight: 600,
+	},
+	subTitle: {
+		color: colors.secondary,
+	},
 });
 
 export default Card;

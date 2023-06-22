@@ -10,6 +10,7 @@ import Icon from "./app/components/Icon";
 import colors from "./app/config/colors";
 import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screen/AccountScreen";
+import ListingsScreen from "./app/screen/ListingsScreen";
 
 export default function App() {
 	return (
@@ -18,7 +19,8 @@ export default function App() {
 			{/* <ViewImageScreen /> */}
 			{/* <ListingDetailsScreen /> */}
 			{/* <MessagesScreen /> */}
-			<AccountScreen />
+			{/* <AccountScreen /> */}
+			<ListingsScreen />
 		</>
 	);
 }

@@ -1,7 +1,17 @@
-import { SafeAreaView, StyleSheet, Platform, StatusBar } from "react-native";
+import {
+	View,
+	SafeAreaView,
+	StyleSheet,
+	Platform,
+	StatusBar,
+} from "react-native";
 
 const Screens = ({ children, style }) => {
-	return <SafeAreaView style={[styles.screen, style]}>{children}</SafeAreaView>;
+	return (
+		<SafeAreaView style={[styles.screen, style]}>
+			<View style={style}>{children}</View>
+		</SafeAreaView>
+	);
 };
 
 const styles = StyleSheet.create({
