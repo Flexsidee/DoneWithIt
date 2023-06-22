@@ -1,7 +1,7 @@
 import { SafeAreaView, StyleSheet, Platform, StatusBar } from "react-native";
 
-const Screens = ({ children }) => {
-	return <SafeAreaView style={styles.screen}>{children}</SafeAreaView>;
+const Screens = ({ children, style }) => {
+	return <SafeAreaView style={[styles.screen, style]}>{children}</SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
