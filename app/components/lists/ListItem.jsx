@@ -3,6 +3,7 @@ import { Swipeable } from "react-native-gesture-handler";
 
 import AppText from "../AppText";
 import colors from "../../config/colors";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const ListItem = ({
 	title,
@@ -11,6 +12,7 @@ const ListItem = ({
 	IconComponent,
 	onPress,
 	renderRightActions,
+	showChevrons = false,
 }) => {
 	return (
 		<Swipeable renderRightActions={renderRightActions}>
@@ -22,6 +24,13 @@ const ListItem = ({
 						<AppText style={styles.title}> {title}</AppText>
 						{subTitle && <AppText> {subTitle}</AppText>}
 					</View>
+					{showChevrons && (
+						<MaterialCommunityIcons
+							color={colors.medium}
+							name="chevron-right"
+							size={25}
+						/>
+					)}
 				</View>
 			</TouchableHighlight>
 		</Swipeable>
@@ -30,18 +39,20 @@ const ListItem = ({
 
 const styles = StyleSheet.create({
 	container: {
+		alignItems: "center",
+		backgroundColor: colors.white,
 		flexDirection: "row",
 		padding: 15,
-		backgroundColor: colors.white,
 	},
 	image: {
-		width: 70,
-		height: 70,
 		borderRadius: 35,
+		height: 70,
+		width: 70,
 	},
 	detailsContainer: {
-		marginLeft: 10,
+		flex: 1,
 		justifyContent: "center",
+		marginLeft: 10,
 	},
 	title: {
 		fontWeight: "500",

@@ -19,7 +19,7 @@ const RegisterScreen = () => {
 				validationSchema={validationSchema}
 			>
 				<AppFormField
-					autoComplete="none"
+					autoCorrect={false}
 					icon="account"
 					name="name"
 					placeholder="Name"
