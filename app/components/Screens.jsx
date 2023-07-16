@@ -9,7 +9,7 @@ import {
 const Screens = ({ children, style }) => {
 	return (
 		<SafeAreaView style={[styles.screen, style]}>
-			<View style={style}>{children}</View>
+			<View style={[style, styles.view]}>{children}</View>
 		</SafeAreaView>
 	);
 };
@@ -17,6 +17,9 @@ const Screens = ({ children, style }) => {
 const styles = StyleSheet.create({
 	screen: {
 		paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+		flex: 1,
+	},
+	view: {
 		flex: 1,
 	},
 });

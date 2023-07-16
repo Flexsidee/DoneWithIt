@@ -13,7 +13,8 @@ const listings = [
 	},
 	{
 		id: 2,
-		title: "Couch in great condition",
+		title:
+			"Couch in great condition lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, voluptates! lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, voluptates!",
 		price: 1000,
 		image: require("../assets/images/couch.jpg"),
 	},
