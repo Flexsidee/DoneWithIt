@@ -15,6 +15,7 @@ import Icon from "./app/components/Icon";
 import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screen/LoginScreen";
+import RegisterScreen from "./app/screen/RegisterScreen";
 
 // const categories = [
 // 	{
@@ -44,8 +45,7 @@ export default function App() {
 					placeholder="Select Category"
 				/>
 			</Screens> */}
-
-			<LoginScreen />
+			<RegisterScreen />
 		</>
 	);
 }
