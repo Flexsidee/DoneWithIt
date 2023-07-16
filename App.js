@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Switch, Text, View } from "react-native";
 
 import WelcomeScreen from "./app/screen/WelcomeScreen";
@@ -9,43 +8,19 @@ import ListingDetailsScreen from "./app/screen/ListingDetailsScreen";
 import MessagesScreen from "./app/screen/MessagesScreen";
 import Screens from "./app/components/Screens";
 import Card from "./app/components/Card";
-import ListItem from "./app/components/ListItem";
+import ListItem from "./app/components/lists/ListItem";
 import colors from "./app/config/colors";
 import Icon from "./app/components/Icon";
 import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screen/LoginScreen";
 import RegisterScreen from "./app/screen/RegisterScreen";
-
-// const categories = [
-// 	{
-// 		label: "Furniture",
-// 		value: 1,
-// 	},
-// 	{
-// 		label: "Clothing",
-// 		value: 2,
-// 	},
-// 	{
-// 		label: "Cameras",
-// 		value: 3,
-// 	},
-// ];
+import ListingEditScreen from "./app/screen/ListingEditScreen";
 
 export default function App() {
-	// 	const [category, setCategory] = useState();
 	return (
 		<>
-			{/* <Screens>
-				<AppPicker
-					item={categories}
-					selectedItem={category}
-					onSelectedItem={(item) => setCategory(item)}
-					icon="apps"
-					placeholder="Select Category"
-				/>
-			</Screens> */}
-			<RegisterScreen />
+			<ListingEditScreen />
 		</>
 	);
 }
