@@ -2,10 +2,8 @@ import { Image, StyleSheet } from "react-native";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-import AppButton from "../components/AppButton";
 import Screens from "../components/Screens";
-import AppFormField from "../components/AppFormField";
-import SubmitButton from "./../components/SubmitButton";
+import { AppForm, AppFormField, SubmitButton } from "../components/forms";
 
 const validationSchemea = Yup.object().shape({
 	email: Yup.string().required().email().label("Email"),
@@ -19,36 +17,31 @@ const LoginScreen = () => {
 				style={styles.logo}
 				source={require("../assets/images/logo-red.png")}
 			/>
-
-			<Formik
+			<AppForm
 				initialValues={{ email: "", password: "" }}
 				onSubmit={(values) => console.log(values)}
 				validationSchema={validationSchemea}
 			>
-				{() => (
-					<>
-						<AppFormField
-							autoCapitalize="none"
-							autoCorrect={false}
-							icon="email"
-							keyboardType="email-address"
-							name="email"
-							placeholder="Email"
-							textContentType="emailAddress"
-						/>
-						<AppFormField
-							autoCapitalize="none"
-							autoCorrect={false}
-							icon="lock"
-							name="password"
-							placeholder="Password"
-							secureTextEntry
-							textContentType="password"
-						/>
-						<SubmitButton title="Login" />
-					</>
-				)}
-			</Formik>
+				<AppFormField
+					autoCapitalize="none"
+					autoCorrect={false}
+					icon="email"
+					keyboardType="email-address"
+					name="email"
+					placeholder="Email"
+					textContentType="emailAddress"
+				/>
+				<AppFormField
+					autoCapitalize="none"
+					autoCorrect={false}
+					icon="lock"
+					name="password"
+					placeholder="Password"
+					secureTextEntry
+					textContentType="password"
+				/>
+				<SubmitButton title="Login" />
+			</AppForm>
 		</Screens>
 	);
 };
