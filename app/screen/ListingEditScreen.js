@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 
@@ -33,8 +32,6 @@ const categories = [
 ];
 
 const ListingEditScreen = () => {
-	const [category, setCategory] = useState();
-
 	return (
 		<Screens style={styles.container}>
 			<AppForm
@@ -53,11 +50,13 @@ const ListingEditScreen = () => {
 					maxLength={8}
 					name="price"
 					placeholder="Price"
+					width={120}
 				/>
 				<AppFormPicker
 					items={categories}
 					name="category"
 					placeholder="Category"
+					width="50%"
 				/>
 				<AppFormField
 					maxLength={255}
