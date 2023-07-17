@@ -11,9 +11,11 @@
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",
     "@react-native-community/hooks": "^3.0.0",
-    "expo": "~48.0.18",
+    "expo": "^49.0.3",
+    "expo-cli": "^6.3.10",
     "expo-status-bar": "~1.4.4",
     "formik": "^2.4.2",
+    "global": "^4.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.8",
