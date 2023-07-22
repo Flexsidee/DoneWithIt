@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../../config/colors";
@@ -9,14 +9,11 @@ const ImageInput = ({ imageUri, onChangeImage }) => {
 			{imageUri ? (
 				<TouchableOpacity onPress={() => alert("Select Image")}>
 					<View style={styles.imageContainer}>
-						<Image
-							source={{ uri: imageUri }}
-							style={{ width: 400, height: 400 }}
-						/>
+						<Image asset source={{ uri: imageUri }} />
 					</View>
 				</TouchableOpacity>
 			) : (
-				<TouchableOpacity onPress={() => alert("camera")}>
+				<TouchableOpacity onPress={onChangeImage}>
 					<View style={styles.iconContainer}>
 						<MaterialCommunityIcons
 							color={colors.medium}

@@ -15,6 +15,7 @@ const ImageInputList = () => {
 			console.log("Error reading an image", error);
 		}
 	};
+
 	const requestPermission = async () => {
 		const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
