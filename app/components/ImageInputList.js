@@ -7,15 +7,6 @@ import ImageInput from "./forms/ImageInput";
 const ImageInputList = () => {
 	const [imageUri, setImageUri] = useState();
 
-	const selectImage = async () => {
-		try {
-			const result = await ImagePicker.launchImageLibraryAsync();
-			if (!result.canceled) setImageUri(result.uri);
-		} catch (error) {
-			console.log("Error reading an image", error);
-		}
-	};
-
 	const requestPermission = async () => {
 		const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
@@ -30,8 +21,10 @@ const ImageInputList = () => {
 
 	return (
 		<View>
-			<ImageInput imageUri={imageUri} onChangeImage={selectImage} />
-			{/* <Image source={{ uri: imageUri }} style={{ width: 400, height: 400 }} /> */}
+			<ImageInput
+				imageUri={imageUri}
+				onChangeImage={(uri) => setImageUri(uri)}
+			/>
 		</View>
 	);
 };
