@@ -4,7 +4,7 @@ import * as ImagePicker from "expo-image-picker";
 
 import ImageInput from "./forms/ImageInput";
 
-const ImageInputList = () => {
+const ImageInputList = ({ imageUris = [], onAddImage, onRemoveImage }) => {
 	const [imageUri, setImageUri] = useState();
 
 	const requestPermission = async () => {
@@ -20,15 +20,24 @@ const ImageInputList = () => {
 	}, []);
 
 	return (
-		<View>
-			<ImageInput
-				imageUri={imageUri}
-				onChangeImage={(uri) => setImageUri(uri)}
-			/>
+		<View style={styles.container}>
+			{imageUris.map((uri, index) => (
+				<View key={index} style={styles.image}>
+					<ImageInput imageUri={uri} onChangeImage={() => onRemoveImage(uri)} />
+				</View>
+			))}
+			<ImageInput onChangeImage={(uri) => onAddImage(uri)} />
 		</View>
 	);
 };
 
 export default ImageInputList;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+	container: {
+		flexDirection: "row",
+	},
+	image: {
+		marginRight: 10,
+	},
+});

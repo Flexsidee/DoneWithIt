@@ -13,10 +13,24 @@ import Screens from "./app/components/Screens";
 import ImageInputList from "./app/components/ImageInputList";
 
 export default function App() {
+	const [imageUris, setImageUris] = useState([]);
+
+	const handleAddImage = (uri) => {
+		setImageUris([...imageUris, uri]);
+	};
+
+	const handleRemoveImage = (uri) => {
+		setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
+	};
+
 	return (
 		<>
 			<Screens style={{ padding: 10 }}>
-				<ImageInputList />
+				<ImageInputList
+					imageUris={imageUris}
+					onAddImage={handleAddImage}
+					onRemoveImage={handleRemoveImage}
+				/>
 			</Screens>
 		</>
 	);
