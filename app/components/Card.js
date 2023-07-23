@@ -8,11 +8,11 @@ import {
 import AppText from "./AppText";
 import colors from "../config/colors";
 
-const Card = ({ image, onPress, subTitle, title }) => {
+const Card = ({ imageUrl, onPress, subTitle, title }) => {
 	return (
 		<TouchableWithoutFeedback onPress={onPress}>
 			<View style={styles.card}>
-				<Image style={styles.image} source={image} />
+				<Image style={styles.image} source={{ uri: imageUrl }} />
 				<View style={styles.cardDetailsContainer}>
 					<AppText style={styles.title} numberOfLines={1}>
 						{title}
