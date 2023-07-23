@@ -7,13 +7,9 @@ const FeedNavigation = () => {
 	const Stack = createStackNavigator();
 
 	return (
-		<Stack.Navigator mode="modal">
+		<Stack.Navigator mode="modal" screenOptions={{ headerShown: false }}>
 			<Stack.Screen name="Lists" component={ListingsScreen} />
-			<Stack.Screen
-				name="ListDetails"
-				component={ListingDetailsScreen}
-				options={{ headerShown: false }}
-			/>
+			<Stack.Screen name="ListDetails" component={ListingDetailsScreen} />
 		</Stack.Navigator>
 	);
 };
