@@ -31,7 +31,7 @@ const AccountScreen = ({ navigation }) => {
 				<ListItem
 					title="Daniel Somade"
 					subTitle="flexsidee@gmail.com"
-					image={require("../assets/images/mosh.jpg")}
+					image={require("../assets/images/daniel.jpg")}
 				/>
 			</View>
 			<View style={styles.container}>

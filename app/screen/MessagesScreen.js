@@ -13,25 +13,25 @@ const initialMessages = [
 			"T1 lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
 		description:
 			"D1 T1 lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumT1 lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumT1 lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-		image: require("../assets/images/mosh.jpg"),
+		image: require("../assets/images/daniel.jpg"),
 	},
 	{
 		id: 2,
 		title: "T2",
 		description: "D2",
-		image: require("../assets/images/mosh.jpg"),
+		image: require("../assets/images/daniel.jpg"),
 	},
 	{
 		id: 3,
 		title: "T3",
 		description: "D3",
-		image: require("../assets/images/mosh.jpg"),
+		image: require("../assets/images/daniel.jpg"),
 	},
 	{
 		id: 4,
 		title: "T4",
 		description: "D4",
-		image: require("../assets/images/mosh.jpg"),
+		image: require("../assets/images/daniel.jpg"),
 	},
 ];
 
@@ -69,13 +69,13 @@ const MessagesScreen = () => {
 							id: 2,
 							title: "T2",
 							description: "D2",
-							image: require("../assets/images/mosh.jpg"),
+							image: require("../assets/images/daniel.jpg"),
 						},
 						{
 							id: 3,
 							title: "T3",
 							description: "D3",
-							image: require("../assets/images/mosh.jpg"),
+							image: require("../assets/images/daniel.jpg"),
 						},
 					]);
 				}}
