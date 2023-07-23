@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import AccountScreen from "../screen/AccountScreen";
+import AccountNavigator from "./AccountNavigator";
 import FeedNavigation from "./FeedNavigation";
 import ListingEditScreen from "../screen/ListingEditScreen";
 
@@ -9,7 +9,7 @@ const AppNavigator = () => {
 	const Tab = createBottomTabNavigator();
 
 	return (
-		<Tab.Navigator>
+		<Tab.Navigator initialRouteName="Account">
 			<Tab.Screen
 				component={FeedNavigation}
 				name="Feed"
@@ -29,7 +29,7 @@ const AppNavigator = () => {
 				}}
 			/>
 			<Tab.Screen
-				component={AccountScreen}
+				component={AccountNavigator}
 				name="Account"
 				options={{
 					tabBarIcon: ({ color, size }) => (

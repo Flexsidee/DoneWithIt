@@ -1,29 +1,30 @@
-import { View, StyleSheet, FlatList } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 
-import Screens from "./../components/Screens";
-import ListItem from "../components/lists/ListItem";
-import ListItemSeparator from "../components/lists/ListItemSeparator";
 import colors from "../config/colors";
 import Icon from "../components/Icon";
+import ListItem from "../components/lists/ListItem";
+import ListItemSeparator from "../components/lists/ListItemSeparator";
+import Screens from "./../components/Screens";
 
-const menuItems = [
-	{
-		title: "My Listings",
-		icon: {
-			name: "format-list-bulleted",
-			backgroundColor: colors.primary,
+const AccountScreen = ({ navigation }) => {
+	const menuItems = [
+		{
+			title: "My Listings",
+			icon: {
+				name: "format-list-bulleted",
+				backgroundColor: colors.primary,
+			},
 		},
-	},
-	{
-		title: "My Messages",
-		icon: {
-			name: "email",
-			backgroundColor: colors.secondary,
+		{
+			title: "My Messages",
+			icon: {
+				name: "email",
+				backgroundColor: colors.secondary,
+			},
+			targetScreen: "Messages",
 		},
-	},
-];
+	];
 
-const AccountScreen = () => {
 	return (
 		<Screens style={styles.screen}>
 			<View style={styles.container}>
@@ -39,13 +40,18 @@ const AccountScreen = () => {
 					keyExtractor={(menuItems) => menuItems.title}
 					renderItem={({ item }) => (
 						<ListItem
-							title={item.title}
 							IconComponent={
 								<Icon
 									name={item.icon.name}
 									backgroundColor={item.icon.backgroundColor}
 								/>
 							}
+							onPress={
+								item.targetScreen
+									? () => navigation.navigate(item.targetScreen)
+									: () => alert("No target screen yet")
+							}
+							title={item.title}
 						/>
 					)}
 					ItemSeparatorComponent={ListItemSeparator}
@@ -53,10 +59,11 @@ const AccountScreen = () => {
 			</View>
 			<View style={styles.container}>
 				<ListItem
-					title="Log Out"
 					IconComponent={
 						<Icon name="logout" backgroundColor={colors.warning} />
 					}
+					onPress={() => alert("Log Out")}
+					title="Log Out"
 				/>
 			</View>
 		</Screens>
