@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { Button, Text } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 import AccountScreen from "./app/screen/AccountScreen";
 import LoginScreen from "./app/screen/LoginScreen";
@@ -14,7 +17,41 @@ import Screens from "./app/components/Screens";
 export default function App() {
 	return (
 		<>
-			<ListingEditScreen />
+			<NavigationContainer>
+				<StackNavigator />
+			</NavigationContainer>
 		</>
 	);
 }
+
+const Link = () => {
+	const navigation = useNavigation();
+	return (
+		<Button title="click" onPress={() => navigation.navigate("TweetDetails")} />
+	);
+};
+
+const Tweets = ({ navigation }) => (
+	<Screens>
+		<Text>Tweets dfdfsdf </Text>
+		{/* <Button
+			title="View Tweet"
+			onPress={() => navigation.navigate("TweetDetails")}
+		/> */}
+		<Link />
+	</Screens>
+);
+
+const TweetDetails = () => (
+	<Screens>
+		<Text> Tweet Details</Text>
+	</Screens>
+);
+
+const Stack = createStackNavigator();
+const StackNavigator = () => (
+	<Stack.Navigator initialRouteName="Tweets">
+		<Stack.Screen name="TweetDetails" component={TweetDetails} />
+		<Stack.Screen name="Tweets" component={Tweets} />
+	</Stack.Navigator>
+);
