@@ -13,14 +13,13 @@ const listings = [
 	},
 	{
 		id: 2,
-		title:
-			"Couch in great condition lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, voluptates! lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, voluptates!",
+		title: "Couch in great condition for sale",
 		price: 1000,
 		image: require("../assets/images/couch.jpg"),
 	},
 ];
 
-const ListingsScreen = () => {
+const ListingsScreen = ({ navigation }) => {
 	return (
 		<Screens style={styles.screen}>
 			<FlatList
@@ -28,9 +27,10 @@ const ListingsScreen = () => {
 				keyExtractor={(list) => list.id.toString()}
 				renderItem={({ item }) => (
 					<Card
-						title={item.title}
-						subTitle={"$" + item.price}
 						image={item.image}
+						onPress={() => navigation.navigate("ListDetails", item)}
+						subTitle={"$" + item.price}
+						title={item.title}
 					/>
 				)}
 			/>
