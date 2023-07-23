@@ -1,8 +1,9 @@
 import { View, Text, StyleSheet, Image, ImageBackground } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import AppButton from "../components/AppButton";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
 	return (
 		<ImageBackground
 			source={require("../assets/images/background.jpg")}
@@ -17,10 +18,10 @@ const WelcomeScreen = () => {
 				<Text style={styles.tagLine}>Sell What You Don't Need</Text>
 			</View>
 			<View style={styles.buttonsContainer}>
-				<AppButton title="Login" onPress={() => alert("Button clicked")} />
+				<AppButton title="Login" onPress={() => navigation.navigate("Login")} />
 				<AppButton
 					title="Register"
-					onPress={() => alert("Button clicked")}
+					onPress={() => navigation.navigate("Register")}
 					color="secondary"
 				/>
 			</View>
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
 	logo: { width: 100, height: 100 },
 	tagLine: {
 		fontSize: 25,
-		fontWeight: 600,
+		fontWeight: "bold",
 		paddingVertical: 20,
 	},
 	buttonsContainer: {
